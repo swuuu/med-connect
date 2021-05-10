@@ -1,0 +1,11 @@
+.navbar {
+    padding: 0 20%;
+}
+
+.navLink {
+    padding: 0 1%;
+}
+
+.navLink:hover {
+    cursor: pointer;
+}

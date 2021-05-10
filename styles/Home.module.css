@@ -1,121 +1,167 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
+/* 
+NOTES:
+1) every main element (ex: <Row></Row>, the navbar, etc...) has a horizontal padding of 12.5% (e.g. "padding: 0 12.5%;")
+*/
+
+
+/* styles for the main search bar of the front page (index.js)  */
+
+.containerSearchBar {
+  margin-top: 5%;
+  padding: 0;
+  background-color: #faf6e9;
+}
+
+.mainSearchBar {
+  padding: 0 20%;
+}
+
+.mainSearchBarSubtitle {
+  padding-top: 3%;
+}
+
+.mainSearchBarBottom {
+  padding-bottom: 6%;
+}
+
+.mainSearchBarContent {
+  text-align: center;
+  padding: 5% 2%;
+}
+
+/* styles for info section */
+.containerInfo {
+  margin: 5% 0;
+}
+
+.infoParagraph {
+  text-align: right;
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* background-color: white; */
 }
 
-.footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
+.mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-self: center;
+  width: 80%;
+  margin: 0 auto;
+  height: 90vh;
+  background-color:var(--white);
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.mainContent {
+  justify-self: start;
+  margin-left: 20px;
+  color: var(--darkgray);
 }
 
-.title a {
-  color: #0070f3;
+.mainContent h1 {
+  font-size: 2rem;
+}
+
+.mainContent p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.mainBtn {
+  font-size: 1rem;
+  background-color: var(--brightred);
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all .35s;
+  outline: none;
+}
+
+.mainBtn a {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.mainBtn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: all 0.35s;
+  border-radius: 4px;
+  background: #336af1;
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.mainBtn:hover::after {
+  width: 100%;
 }
 
-.title,
-.description {
+#mainImg {
+  height: 80%;
+  width: 80%;
+}
+
+.mainImgContainer {
   text-align: center;
 }
 
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin-top: 3rem;
-}
-
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+/* Mobile response */
+@media screen and (max-width: 768px) {
+  .mainContainer {
+      display: grid;
+      grid-template-columns: auto;
+      align-items: center;
+      justify-self: center;
+      width: 90%;
+      margin: 0 auto;
+      height: 90vh;
+      background-color: var(--white);
   }
+
+  .mainContent {
+      justify-self: center;
+      color: var(--darkgray);
+      width: 80%;
+      margin: 0;
+  }
+
+  .mainContent h1 {
+      font-size: 2.5rem;
+  }
+
+  .mainContent p {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+  }
+
+  #mainImg {
+      display: none;
+  }
+
+@media screen and (max-width:480px) {
+  .mainContent {
+      text-align: center;
+  }
+  .mainContent h1 {
+      font-size: 2.8rem;
+  }
+  .mainContent p {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+  }
+  .mainBtn {
+      padding: 12px 36px;
+      margin-top: 2.5rem;
+  }
+}
 }
